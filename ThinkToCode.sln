@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ADB5DFCC-0C8F-4B5E-82F6-B2A192B9F307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6766F556-D46D-47EF-91B5-24165358C4CB}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ThinkToCode", "src\ThinkToCode\ThinkToCode.xproj", "{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Services", "3. Services", "{C4C78B98-56F7-4396-91FF-7729C75079CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Web", "4. Web", "{13DB746D-2BED-4446-BB18-35690FC2228A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ThinkToCode.Services", "ThinkToCode.Services\ThinkToCode.Services.xproj", "{EC57020F-6E37-4715-885F-AE80DC546389}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Common", "1. Common", "{F31EC2FE-2037-4FD5-A9E5-187DA3111AFB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ThinkToCode.Common", "ThinkToCode.Common\ThinkToCode.Common.xproj", "{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business", "2. Business", "{8FACB516-B8E2-4754-B468-A521CAB02B51}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ThinkToCode.Business", "ThinkToCode.Business\ThinkToCode.Business.xproj", "{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC57020F-6E37-4715-885F-AE80DC546389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC57020F-6E37-4715-885F-AE80DC546389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC57020F-6E37-4715-885F-AE80DC546389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC57020F-6E37-4715-885F-AE80DC546389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D0AB749-2A1F-4047-8F37-ECCF39CE81A5} = {13DB746D-2BED-4446-BB18-35690FC2228A}
+		{C4C78B98-56F7-4396-91FF-7729C75079CE} = {ADB5DFCC-0C8F-4B5E-82F6-B2A192B9F307}
+		{13DB746D-2BED-4446-BB18-35690FC2228A} = {ADB5DFCC-0C8F-4B5E-82F6-B2A192B9F307}
+		{EC57020F-6E37-4715-885F-AE80DC546389} = {C4C78B98-56F7-4396-91FF-7729C75079CE}
+		{F31EC2FE-2037-4FD5-A9E5-187DA3111AFB} = {ADB5DFCC-0C8F-4B5E-82F6-B2A192B9F307}
+		{7FB7E72F-3571-40C9-88AB-DA18B0BD6BE5} = {F31EC2FE-2037-4FD5-A9E5-187DA3111AFB}
+		{8FACB516-B8E2-4754-B468-A521CAB02B51} = {ADB5DFCC-0C8F-4B5E-82F6-B2A192B9F307}
+		{5DF15A99-DD2B-427C-A02A-BB32AE7E0F88} = {8FACB516-B8E2-4754-B468-A521CAB02B51}
+	EndGlobalSection
+EndGlobal

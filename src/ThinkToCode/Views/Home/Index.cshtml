@@ -1,0 +1,41 @@
+﻿@using System.Collections.Generic;
+@using ThinkToCode.Common.Entity;
+
+@model  IList<ArticleSummary>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<div class="col-md-12 content-page">
+    <div class="col-md-12 blog-post">
+
+        @if (Model != null)
+        {
+        @foreach (var articleSummary in Model)
+            {
+        <div class="post-title">
+            <h1>@articleSummary.Tile </h1>
+        </div>
+        <!-- Post Headline End -->
+        <!-- Post Detail Start -->
+                <div class="post-info">
+                    <span>@articleSummary.WrittenOn</span>
+                </div>
+        <!-- Post Detail End -->
+                <p>
+                    @articleSummary.Summary
+                </p>
+
+
+                @if (articleSummary.ArticleType == (int)ArticleTypeEnum.DesingArchitecture)
+                {
+                               <b><a title="Click to read full article." href="/article/index/@articleSummary.SeoTitle">Read full article  ..</a></b>
+                }
+             }
+        }
+    </div>
+</div>

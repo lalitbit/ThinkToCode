@@ -1,0 +1,11 @@
+﻿@using System.IO;
+
+@{
+    ViewData["Title"] = "Home Page 666";
+}
+@model string
+
+
+<div class="col-md-12 content-page">
+    @Html.Raw(File.ReadAllText(Model))
+</div>
