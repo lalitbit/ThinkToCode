@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ThinkToCode.Business.Contracts;
 using ThinkToCode.Business.Implementations;
+using ThinkToCode.Repository.Contract;
+using ThinkToCode.Repository.FileImplementation;
 using ThinkToCode.Services.Contract;
 using ThinkToCode.Services.Implementation;
 
@@ -35,10 +37,12 @@ namespace ThinkToCode
             services.AddMvc();
 
             services.AddTransient<IArticleService, ArticleService>();
-            services.AddTransient<IArticleBusiness, ArticleBusiness>();
             services.AddSingleton<IMetatagService, MetatagService>();
 
+            services.AddTransient<IArticleBusiness, ArticleBusiness>();
             services.AddSingleton<IMetatagBusiness, MetatagBusiness>();
+
+            services.AddSingleton<IMetaDataRepository, FileBasedMetaDataRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
