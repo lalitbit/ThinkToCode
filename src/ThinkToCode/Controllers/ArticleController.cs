@@ -38,6 +38,7 @@ namespace ThinkToCode.Controllers
         /// <param name="information">The information.</param>
         private void ConfigureMetatagsForSeo(string information)
         {
+            //
             var info = information.Replace('-',' ') + ",";
             var metatagsInformation = this.metatagService.GetMetatagsForIndexPage();
             ViewData["keywords"] = info +  metatagsInformation.Keywords;
