@@ -39,6 +39,7 @@ namespace ThinkToCode.Business.Implementations
 
         private Metadata GetMetatagsForIndexPage_Dummy()
         {
+            int i = 10;
             var metatdata= new Metadata
             {
                 Description = "Blog for .net developer",
