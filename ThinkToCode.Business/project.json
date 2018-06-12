@@ -3,7 +3,8 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "ThinkToCode.Common": "1.0.0-*"
+    "ThinkToCode.Common": "1.0.0-*",
+    "ThinkToCode.Repository": "1.0.0-*"
   },
 
   "frameworks": {

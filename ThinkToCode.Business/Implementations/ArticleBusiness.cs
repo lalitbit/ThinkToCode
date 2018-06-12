@@ -5,6 +5,7 @@ namespace ThinkToCode.Business.Implementations
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Common.Enumeration;
     using ThinkToCode.Business.Contracts;
     using ThinkToCode.Common.Entity;
 
