@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using ThinkToCode.Common.Entity;
 using ThinkToCode.Services.Contract;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,20 +15,23 @@ namespace ThinkToCode.Controllers
 {
     public class ArticleController : Controller
     {
+        private IArticleService articleService;
         private IHostingEnvironment _env;
         private IMetatagService metatagService;
 
-        public ArticleController(IHostingEnvironment env, IMetatagService metatagService)
+        public ArticleController(IHostingEnvironment env, IMetatagService metatagService, IArticleService articleService)
         {
             _env = env;
             this.metatagService = metatagService;
+            this.articleService = articleService;
         }
 
         // GET: /<controller>/
         [HttpGet]
         public IActionResult Index(string id)
         {
-            var file = Path.Combine(_env.WebRootPath, "content", "Visitor-Pattern-Reexplained.cshtml");
+            var article = this.articleService.GetArticle(new ArticleSummary { SeoTitle = id });
+            var file = Path.Combine(_env.WebRootPath, "content", article.FileName);
             this.ConfigureMetatagsForSeo(id);
             return View("index", file);
         }
@@ -38,9 +42,9 @@ namespace ThinkToCode.Controllers
         /// <param name="information">The information.</param>
         private void ConfigureMetatagsForSeo(string information)
         {
-            var info = information.Replace('-',' ') + ",";
+            var info = information.Replace('-', ' ') + ",";
             var metatagsInformation = this.metatagService.GetMetatags(information);
-            ViewData["keywords"] = info +  metatagsInformation.Keywords;
+            ViewData["keywords"] = info + metatagsInformation.Keywords;
             ViewData["description"] = info + metatagsInformation.Description;
             ViewData["author"] = metatagsInformation.Author;
             ViewData["url"] = metatagsInformation.Url;

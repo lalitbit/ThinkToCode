@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,11 +39,15 @@ namespace ThinkToCode
 
             services.AddTransient<IArticleService, ArticleService>();
             services.AddSingleton<IMetatagService, MetatagService>();
+            services.AddSingleton<IMenuService, MenuService>();
 
             services.AddTransient<IArticleBusiness, ArticleBusiness>();
             services.AddSingleton<IMetatagBusiness, MetatagBusiness>();
+            services.AddSingleton<IMenuBusiness, MenuBusiness>();
 
             services.AddSingleton<IMetaDataRepository, FileBasedMetaDataRepository>();
+            services.AddSingleton<IMenuRepository, MenuFileRepository>();
+            services.AddSingleton<IArticleRepository, ArticleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,8 +71,22 @@ namespace ThinkToCode
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+name: "home",
+template: "home/{id}",
+defaults: new { controller = "home", action = "topic" });
+
+                routes.MapRoute(
+  name: "article",
+  template: "article/{id}",
+  defaults: new { controller = "article", action = "index" });
+
+
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+
             });
         }
     }

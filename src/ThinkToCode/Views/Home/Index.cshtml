@@ -1,5 +1,6 @@
 ﻿@using System.Collections.Generic;
 @using ThinkToCode.Common.Entity;
+@using ThinkToCode.Common.Enumeration;
 
 @model  IList<ArticleSummary>
 
@@ -15,11 +16,12 @@
 
         @if (Model != null)
         {
-        @foreach (var articleSummary in Model)
+            @foreach (var articleSummary in Model)
             {
-        <div class="post-title">
-            <h1>@articleSummary.Tile </h1>
-        </div>
+
+                <div class="post-title">
+                    <h1>@articleSummary.Tile </h1>
+                </div>
         <!-- Post Headline End -->
         <!-- Post Detail Start -->
                 <div class="post-info">
@@ -27,15 +29,14 @@
                 </div>
         <!-- Post Detail End -->
                 <p>
-                    @articleSummary.Summary
+                    @articleSummary.Description
                 </p>
+                <div class="row float-lg-right">
+                   <a class="noUnderline" title="Click to read full article." href="/article/@articleSummary.SeoTitle"><b><u>Read full article..</u></b></a>
 
+                </div>
 
-                @if (articleSummary.ArticleType == (int)ArticleTypeEnum.DesingArchitecture)
-                {
-                               <b><a title="Click to read full article." href="/article/index/@articleSummary.SeoTitle">Read full article  ..</a></b>
-                }
-             }
+            }
         }
     </div>
 </div>

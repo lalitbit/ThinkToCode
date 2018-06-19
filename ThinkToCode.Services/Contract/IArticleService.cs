@@ -16,8 +16,11 @@ namespace ThinkToCode.Services.Contract
         /// <summary>
         /// Gets all article summary.
         /// </summary>
-        /// <returns>Return the list of articles summary.</returns>
-        IList<ArticleSummary> GetAllArticleSummary();
+        /// <param name="category">The category.</param>
+        /// <returns>
+        /// Return the list of articles summary.
+        /// </returns>
+        IList<ArticleSummary> GetAllArticleSummary(string category);
 
         /// <summary>
         /// Gets the article.

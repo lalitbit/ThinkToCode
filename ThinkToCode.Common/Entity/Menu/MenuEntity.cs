@@ -14,8 +14,19 @@ namespace ThinkToCode.Common.Entity.Menu
 
         public string Name { get; set; }
 
+        public string UrlName { get; set; }
+
         public int DisplayOrder { get; set; }
 
         public IList<MenuEntity> SubMenus { get; set; }
+
+        public string UrlNameOrDefault
+        {
+            get
+            {
+                return string.IsNullOrEmpty(this.UrlName) ? this.Name : this.UrlName;
+            }
+        }
+
     }
 }

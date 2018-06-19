@@ -35,9 +35,9 @@ namespace ThinkToCode.Services.Implementation
         /// <returns>
         /// Return the list of articles summary.
         /// </returns>
-        public IList<ArticleSummary> GetAllArticleSummary()
+        public IList<ArticleSummary> GetAllArticleSummary(string category)
         {
-            IList<ArticleSummary> articles = this.articleBusiness.GetAllArticleWithSummaries();
+            IList<ArticleSummary> articles = this.articleBusiness.GetAllArticleWithSummaries(category);
             return articles;
         }
 
@@ -50,7 +50,8 @@ namespace ThinkToCode.Services.Implementation
         /// </returns>
         public ArticleEntity GetArticle(ArticleSummary articleSummary)
         {
-            throw new NotImplementedException();
+          var  articles = this.articleBusiness.GetArticle(articleSummary);
+            return articles;
         }
     }
 }

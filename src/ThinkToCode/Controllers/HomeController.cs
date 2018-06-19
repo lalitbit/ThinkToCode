@@ -32,9 +32,17 @@ namespace ThinkToCode.Controllers
 
         public IActionResult Index()
         {
-            var articleSummaries = this.articleService.GetAllArticleSummary();
+            var articleSummaries = this.articleService.GetAllArticleSummary(null);
             this.ConfigureMetatagsForSeo();
             return View(articleSummaries);
+        }
+
+        [HttpGet]
+        public IActionResult Topic(string id)
+        {
+            var articleSummaries = this.articleService.GetAllArticleSummary(id);
+            this.ConfigureMetatagsForSeo();
+            return View("Index", articleSummaries);
         }
 
         public IActionResult About()

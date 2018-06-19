@@ -1,0 +1,28 @@
+﻿
+@using ThinkToCode.Common.Entity.Menu;
+@model MenuDetailEntity
+
+<section class="bg-light SmallPadding" id="portfolio" >
+    <div class="container">
+        @*<div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Portfolio</h2>
+                
+            </div>
+        </div>*@
+        <div class="row">
+            @foreach (var item in Model.SubMenus)
+            { <a href="/Article/@item.UrlName" class="noUnderline">
+
+ 
+                    <div class="col-lg-12 zoom">
+                        <h4>@item.Name</h4>
+
+                    </div>
+                 
+
+            </a>
+            }
+        </div>
+    </div>
+</section>
