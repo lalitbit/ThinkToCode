@@ -40,7 +40,7 @@ namespace ThinkToCode.Repository.DbData
             menu.SubMenus = subMenus;
             menu.SubMenuMappings = subMenuMappings;
 
-            menu.Menus = menu.Menus.Where(x=>x.ari)
+       //     menu.Menus = menu.Menus.Where(x=>x.ari)
             foreach (var item in menu.Menus)
             {
                 subMenuMappings.Where(x => x.MenuId == item.Id).ToList()
