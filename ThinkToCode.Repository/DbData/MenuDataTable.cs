@@ -40,7 +40,8 @@ namespace ThinkToCode.Repository.DbData
             menu.SubMenus = subMenus;
             menu.SubMenuMappings = subMenuMappings;
 
-       //     menu.Menus = menu.Menus.Where(x=>x.ari)
+            var menuEnityToDelete = new List<MenuEntity>();
+            //     menu.Menus = menu.Menus.Where(x=>x.ari)
             foreach (var item in menu.Menus)
             {
                 subMenuMappings.Where(x => x.MenuId == item.Id).ToList()
@@ -52,7 +53,18 @@ namespace ThinkToCode.Repository.DbData
                              item.SubMenus.Add(submenu);
                          }
                      });
+
+                // if not submenus is there, then remove pararent menu itself.
+                if (!item.SubMenus.Any())
+                {
+                    menuEnityToDelete.Add(item);
+                }
             }
+
+            menuEnityToDelete.ForEach(item =>
+            {
+                menu.Menus.Remove(item);
+            });
 
             return menu;
         }

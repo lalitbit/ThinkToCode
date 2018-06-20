@@ -12,31 +12,30 @@
 
 
 <div class="col-md-12 content-page">
-    <div class="col-md-12 blog-post">
 
-        @if (Model != null)
+    @if (Model != null)
+    {
+        @foreach (var articleSummary in Model)
         {
-            @foreach (var articleSummary in Model)
-            {
-
+            <div class="col-md-12 blog-post">
                 <div class="post-title">
                     <h1>@articleSummary.Tile </h1>
                 </div>
-        <!-- Post Headline End -->
-        <!-- Post Detail Start -->
+                <!-- Post Headline End -->
+                <!-- Post Detail Start -->
                 <div class="post-info">
                     <span>@articleSummary.WrittenOn</span>
                 </div>
-        <!-- Post Detail End -->
+                <!-- Post Detail End -->
                 <p>
                     @articleSummary.Description
                 </p>
-                <div class="row float-lg-right">
-                   <a class="noUnderline" title="Click to read full article." href="/article/@articleSummary.SeoTitle"><b><u>Read full article..</u></b></a>
-
+                <div class="rightBottomCorner">
+                    <a class="noUnderline" title="Click to read full article." href="/article/@articleSummary.SeoTitle"><span class="FirtCharacterMedium">F</span><b>ull article..</b></a>
                 </div>
 
-            }
+            </div>
         }
-    </div>
+    }
+
 </div>
