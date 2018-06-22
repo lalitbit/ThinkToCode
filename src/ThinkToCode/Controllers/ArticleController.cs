@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using ThinkToCode.Common.Entity;
+using ThinkToCode.Model;
 using ThinkToCode.Services.Contract;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -30,10 +31,18 @@ namespace ThinkToCode.Controllers
         [HttpGet]
         public IActionResult Index(string id)
         {
-            var article = this.articleService.GetArticle(new ArticleSummary { SeoTitle = id });
+            var article = this.articleService.GetArticle(new ArticleSummary { SeoTitle = id, IncludeComments = true });
+
             var file = Path.Combine(_env.WebRootPath, "content", article.FileName);
             this.ConfigureMetatagsForSeo(id);
-            return View("index", file);
+
+            var articleModel = new ArticleModel()
+            {
+                File = file,
+                UserComments = article.UserComments
+            };
+
+            return View("index", articleModel);
         }
 
         /// <summary>

@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace ThinkToCode.Common.Entity
 {
-    public class ArticleSummary : ArticleEntity
+    public class UserComment
     {
-        public bool IncludeComments { get; set; }
+        public string UserName { get; set; }
+        public string Comment { get; set; }
     }
 }

@@ -45,7 +45,23 @@ namespace ThinkToCode.Business.Implementations
         /// </returns>
         public ArticleEntity GetArticle(ArticleSummary articleSummary)
         {
-            return this.articleRepository.GetArticlesBySeoTitle(articleSummary.SeoTitle);
+            var article = this.articleRepository.GetArticlesBySeoTitle(articleSummary.SeoTitle);
+            if (article != null && articleSummary.IncludeComments)
+            {
+                article.UserComments = this.GetUserComments(article.FileKey);
+            }
+
+            return article;
+        }
+
+        public IList<UserComment> GetUserComments(string id)
+        {
+            return this.articleRepository.GetUserComments(id);
+        }
+
+        public bool SaveUserComment(UserComment userCommnet)
+        {
+            throw new NotImplementedException();
         }
     }
 }

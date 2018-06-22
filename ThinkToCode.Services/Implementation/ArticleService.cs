@@ -50,8 +50,28 @@ namespace ThinkToCode.Services.Implementation
         /// </returns>
         public ArticleEntity GetArticle(ArticleSummary articleSummary)
         {
-          var  articles = this.articleBusiness.GetArticle(articleSummary);
+            var articles = this.articleBusiness.GetArticle(articleSummary);
             return articles;
+        }
+
+        /// <summary>
+        /// Gets the user comments.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public IList<UserComment> GetUserComments(string id)
+        {
+            return this.articleBusiness.GetUserComments(id);
+        }
+
+        /// <summary>
+        /// Saves the user comment.
+        /// </summary>
+        /// <param name="userCommnet">The user commnet.</param>
+        /// <returns></returns>
+        public bool SaveUserComment(UserComment userCommnet)
+        {
+            return this.articleBusiness.SaveUserComment(userCommnet);
         }
     }
 }

@@ -12,20 +12,40 @@ namespace ThinkToCode.Repository.FileImplementation
 {
     public class ArticleRepository : Common.BaseRepository<ArticleEntity>, IArticleRepository
     {
+        /// <summary>
+        /// The article data
+        /// </summary>
         ArticleDataTable articleData;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArticleRepository" /> class.
+        /// </summary>
         public ArticleRepository()
         {
             articleData = ArticleDataTable.Instance;
         }
 
 
+        /// <summary>
+        /// Gets the articles by seo title.
+        /// </summary>
+        /// <param name="seoTitle">The seo title.</param>
+        /// <returns>
+        /// Return the article summary.
+        /// </returns>
         public ArticleSummary GetArticlesBySeoTitle(string seoTitle)
         {
             var article = this.articleData.PopulateArticles().Where(x => string.Compare(x.SeoTitle, seoTitle, true) == 0).First();
             return new ArticleSummary { FileName = string.Format("{0}.cshtml", article.FileKey) };
         }
 
+        /// <summary>
+        /// Gets the articles snap shots.
+        /// </summary>
+        /// <param name="category">The category.</param>
+        /// <returns>
+        /// Return the list of article summaries.
+        /// </returns>
         public IList<ArticleSummary> GetArticlesSnapShots(string category)
         {
             HashSet<int> topicIds = new HashSet<int>();
@@ -52,7 +72,6 @@ namespace ThinkToCode.Repository.FileImplementation
                 }
             }
 
-
             if (topicIds.Any())
             {
                 articleEntities = articleEntities.Where(X => topicIds.Contains(X.TopicId)).ToList();
@@ -74,26 +93,36 @@ namespace ThinkToCode.Repository.FileImplementation
         }
 
         /// <summary>
-        /// Gets the dummy data for article sumaries.
+        /// Gets the user comments.
         /// </summary>
+        /// <param name="id">The identifier.</param>
         /// <returns>
-        /// Return list of article with summary
-        /// </returns>      
-        //private IList<ArticleSummary> GetDummyDataForArticleSumaries()
-        //{
-        //    var articles = new List<ArticleSummary>();
-        //    articles.Add(new ArticleSummary
-        //    {
-        //        Tile = "Visitor Pattern - ReExplained !!",
-        //        SeoTitle = "Visitor-Pattern-ReExplained",
-        //        WrittenOn = "March 17, 2018",
-        //        //ArticleType = (int)ArticleTypeEnum.DesingArchitecture,
-        //        Summary = "Visitor Pattern is, in general opinion, is the most complicated design pattern because of the nature of problem it solves. We will look what it is, how it works and how it should be implemented in real scenarios.<o:p>" +
-        //        "Every one among us might get into the situation, when we have a complex class hierarchy and we want to add or modify their behaviors without changing their original code.The “Complex” word I have used because in the hierarchy, every object are of different types and we want to add operation which will run on specific type’s.i.e.different operation for different types of object. Frankly saying, most of time we do type/instance checking to determine the type and then select the operation via If-else statement.This approach has its own limitations and, of course, not an object oriented way.To fix this type of problems in an object oriented way – Visitor Pattern came into picture."
-        //    });
+        /// Return the list of user comments.
+        /// </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public IList<UserComment> GetUserComments(string id)
+        {
+            return new List<UserComment> {
+                new UserComment {UserName="Santokh",Comment="Nice article"  },
+                new UserComment {UserName="Manish",Comment="Nice article"  },
+                new UserComment {UserName="Ravi",Comment="Nice article"  },
+                new UserComment {UserName="Kedar Nath",Comment="Nice article"  },
+                new UserComment {UserName="Sachin Tendulkar",Comment="Nice article"  },
+                new UserComment {UserName="Ram Krishna",Comment="Nice article"  }
+            };
+        }
 
-        //    return articles;
-        //}
-
+        /// <summary>
+        /// Saves the user comment.
+        /// </summary>
+        /// <param name="userCommnet">The user commnet.</param>
+        /// <returns>
+        /// Return the status.
+        /// </returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool SaveUserComment(UserComment userCommnet)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -849,3 +849,42 @@ p {
 .TopSpace100{
     padding-top:100px;
 }
+
+comment.masthead {
+    text-align: left;
+    color: white;
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.NoComment {
+  font-family:  "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+  font-size:30px;
+  color: violet;
+}
+.content-page{
+    padding-bottom:50px;
+    border-bottom:2px;
+    border-bottom-color:red;
+}
+
+ 
+.fill-height{
+   padding-top: 150px;
+   padding-bottom: 150px;
+    min-height: 100%;
+   height:100vh;
+ }
+
+#hello{
+  vertical-align: middle;
+  font-family: 'Georgia';
+  color: rgb(255, 255, 255); /*white text*/
+  font-weight: bold
+}

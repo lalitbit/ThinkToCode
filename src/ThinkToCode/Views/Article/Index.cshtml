@@ -1,11 +1,69 @@
 ﻿@using System.IO;
+@using ThinkToCode.Model;
+@{
+    ViewData["Title"] = "lalitchandra.in";
+}
+@model ArticleModel
 
 @{
-    ViewData["Title"] = "Home Page 666";
+    bool isValidArticle = true;
 }
-@model string
-
 
 <div class="col-md-12 content-page">
-    @Html.Raw(File.ReadAllText(Model))
+    @try
+    {
+        @Html.Raw(File.ReadAllText(Model.File))
+    }
+    catch (Exception ex)
+    {
+        isValidArticle = false;
+
+        <div class="container fill-height">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div id="hello" class="col-lg-10">
+                    <h1 style="text-align:center;" class="NoComment"> Opps !! Looks like some issue with this article. Please visit after some time.</h1>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>
+    }
 </div>
+
+@if (isValidArticle)
+{
+    @if (!Model.UserComments.Any())
+    {
+        <div class="media mb-4">
+            <span class="NoComment">No commnet yet. Shoud you want to be first to comment on this article.</span>
+        </div>
+    }
+
+    <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    @* Commnet listing *@
+    @if (Model.UserComments.Any())
+    {
+
+        @foreach (var comment in Model.UserComments)
+        {
+            <div class="media mb-4">
+                <img class="d-flex mr-3 rounded-circle" alt="" src="http://placehold.it/50x50">
+                <div class="media-body">
+                    <h5 class="mt-0">@comment.UserName</h5>
+                    @comment.Comment
+                </div>
+            </div>
+        }
+    }
+}

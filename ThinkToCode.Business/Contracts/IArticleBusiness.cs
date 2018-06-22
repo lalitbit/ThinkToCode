@@ -25,5 +25,20 @@ namespace ThinkToCode.Business.Contracts
         /// <param name="articleSummary">The article summary.</param>
         /// <returns>Return the specific article.</returns>
         ArticleEntity GetArticle(ArticleSummary articleSummary);
+
+        /// <summary>
+        /// Gets the user comments.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        IList<UserComment> GetUserComments(string id);
+
+        /// <summary>
+        /// Saves the user comment.
+        /// </summary>
+        /// <param name="userCommnet">The user commnet.</param>
+        /// <returns></returns>
+        bool SaveUserComment(UserComment userCommnet);
+
     }
 }

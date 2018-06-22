@@ -7,6 +7,10 @@ namespace ThinkToCode.Common.Entity
 {
     public class ArticleEntity : BaseEntity
     {
+        public ArticleEntity()
+        {
+            this.UserComments = new List<UserComment>();
+        }
         public int TopicId { get; set; }
 
         /// <summary>
@@ -50,5 +54,13 @@ namespace ThinkToCode.Common.Entity
         public string Description { get; set; }
 
         public string FileName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the user comments.
+        /// </summary>
+        /// <value>
+        /// The user comments.
+        /// </value>
+        public IList<UserComment> UserComments { get; set; }
     }
 }
