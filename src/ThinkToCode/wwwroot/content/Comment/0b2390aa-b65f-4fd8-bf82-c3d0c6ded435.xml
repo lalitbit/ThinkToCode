@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Comments>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>asdfasdd asdf asdf asdf </Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>asd as fasdf asdfas dfasd</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>asd as fasdf asdfas dfasd</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>a asdf asdf asdf asdf asdfasdfdas fsdfasdf</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>zxczxxczxCzXCzXCzXczxC sdssssssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>sssssssss</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>e want to operate similar type of operation on objects of different types grouped together in hierarchy or collection.
+We want to separate the distinct and unrelated behaviors from the type class (i.e. Car in above example), to another class and want to switch the behaviors dynamically.
+We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the object structure remain unchanged.
+This should not be used when:</Comment>
+  </Node>
+</Comments>

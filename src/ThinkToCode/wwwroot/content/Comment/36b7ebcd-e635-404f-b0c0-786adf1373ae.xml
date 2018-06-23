@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Comments>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>nts and the return type for the Visiting methods must be known at design time. So this pattern is not good for the situation where types are added frequently, because once the new type is introduces, all the visitor must be changes accordingly.
+The behaviors are specific to specific type not for the hierarchy. Such behaviors should not be implemented via visitor, as visitor is used to define behaviors (visitors) which will be applied to the whole hierarc</Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the </Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the </Comment>
+  </Node>
+  <Node>
+    <Name>User 1</Name>
+    <Comment>We have the stable object hierarchy which is not likely to be changed, but there is a strong probability of addition of new operation in future. Since this Visitor pattern allow us to separate the operation from the object structure, it is now easy for us to add new operations in the form of Visitors. This will work as long as the </Comment>
+  </Node>
+</Comments>
