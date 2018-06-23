@@ -888,3 +888,12 @@ comment.masthead {
   color: rgb(255, 255, 255); /*white text*/
   font-weight: bold
 }
+
+
+.has-error{
+    border-color:red;
+    border-width:thick;
+    border-style:double;
+}
+
+input foc

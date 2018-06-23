@@ -7,9 +7,10 @@ using ThinkToCode.Common.Entity;
 
 namespace ThinkToCode.Model
 {
-    public class ArticleModel  
+    public class ArticleModel
     {
         public string File { get; set; }
+        public string FileKey { get; set; }
         public IList<UserComment> UserComments { get; set; }
     }
 }

@@ -31,19 +31,22 @@ namespace ThinkToCode.Controllers
         [HttpGet]
         public IActionResult Index(string id)
         {
-            var article = this.articleService.GetArticle(new ArticleSummary { SeoTitle = id, IncludeComments = true });
+            var article = this.articleService.GetArticle(new ArticleSummary { SeoTitle = id });
 
-            var file = Path.Combine(_env.WebRootPath, "content", article.FileName);
+            var file = Path.Combine(_env.WebRootPath, @"content\DC", article.FileName);
             this.ConfigureMetatagsForSeo(id);
 
             var articleModel = new ArticleModel()
             {
                 File = file,
+                FileKey= article.FileKey,
                 UserComments = article.UserComments
             };
 
             return View("index", articleModel);
         }
+
+       
 
         /// <summary>
         /// Configures the metatags for seo.

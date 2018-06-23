@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using Microsoft.AspNetCore.Hosting;
 using ThinkToCode.Common.Entity;
 using ThinkToCode.Common.Enumeration;
 using ThinkToCode.Repository.Common;
@@ -16,13 +20,15 @@ namespace ThinkToCode.Repository.FileImplementation
         /// The article data
         /// </summary>
         ArticleDataTable articleData;
+        private IHostingEnvironment _env;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ArticleRepository" /> class.
         /// </summary>
-        public ArticleRepository()
+        public ArticleRepository(IHostingEnvironment _env)
         {
             articleData = ArticleDataTable.Instance;
+            this._env = _env;
         }
 
 
@@ -36,7 +42,7 @@ namespace ThinkToCode.Repository.FileImplementation
         public ArticleSummary GetArticlesBySeoTitle(string seoTitle)
         {
             var article = this.articleData.PopulateArticles().Where(x => string.Compare(x.SeoTitle, seoTitle, true) == 0).First();
-            return new ArticleSummary { FileName = string.Format("{0}.cshtml", article.FileKey) };
+            return new ArticleSummary { FileName = string.Format("{0}.cshtml", article.FileKey), FileKey = article.FileKey };
         }
 
         /// <summary>
@@ -102,14 +108,32 @@ namespace ThinkToCode.Repository.FileImplementation
         /// <exception cref="NotImplementedException"></exception>
         public IList<UserComment> GetUserComments(string id)
         {
-            return new List<UserComment> {
-                new UserComment {UserName="Santokh",Comment="Nice article"  },
-                new UserComment {UserName="Manish",Comment="Nice article"  },
-                new UserComment {UserName="Ravi",Comment="Nice article"  },
-                new UserComment {UserName="Kedar Nath",Comment="Nice article"  },
-                new UserComment {UserName="Sachin Tendulkar",Comment="Nice article"  },
-                new UserComment {UserName="Ram Krishna",Comment="Nice article"  }
-            };
+            var userComments = new List<UserComment>();
+            var file = Path.Combine(_env.WebRootPath, @"content\comment", id + ".xml");
+
+            XElement root;
+            if (File.Exists(file))
+            {
+                root = XElement.Load(file);
+                foreach (var item in root.Elements())
+                {
+                    userComments.Add(new UserComment
+                    {
+                        Comment = item.Element("Comment").Value,
+                        UserName = item.Element("Name").Value
+                    });
+                }
+            }
+
+            return userComments;
+            //return new List<UserComment> {
+            //    new UserComment {UserName="Santokh",Comment="Nice article"  },
+            //    new UserComment {UserName="Manish",Comment="Nice article"  },
+            //    new UserComment {UserName="Ravi",Comment="Nice article"  },
+            //    new UserComment {UserName="Kedar Nath",Comment="Nice article"  },
+            //    new UserComment {UserName="Sachin Tendulkar",Comment="Nice article"  },
+            //    new UserComment {UserName="Ram Krishna",Comment="Nice article"  }
+            //};
         }
 
         /// <summary>
@@ -122,7 +146,32 @@ namespace ThinkToCode.Repository.FileImplementation
         /// <exception cref="NotImplementedException"></exception>
         public bool SaveUserComment(UserComment userCommnet)
         {
-            throw new NotImplementedException();
+            var file = Path.Combine(_env.WebRootPath, @"content\comment", userCommnet.FileId + ".xml");
+
+            XElement root;
+            if (File.Exists(file))
+                root = XElement.Load(file);
+            else
+                root = new XElement("Comments");
+
+            root.Add(new XElement("Node",
+                     new XElement("Name", userCommnet.UserName),
+                     new XElement("Comment", userCommnet.Comment)));
+
+            // root.Save(file);
+            this.SaveToXML(root, file);
+            return true;
+        }
+
+        private void SaveToXML(XElement element, string file)
+        {
+            FileStream fileStream = new FileStream(file, FileMode.Create);
+            XmlWriterSettings settings = new XmlWriterSettings() { Indent = true };
+            XmlWriter writer = XmlWriter.Create(fileStream, settings);
+            element.Save(writer);
+            writer.Flush();
+            fileStream.Flush();
+            fileStream.Dispose();
         }
     }
 }

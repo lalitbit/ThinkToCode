@@ -13,6 +13,7 @@
     @try
     {
         @Html.Raw(File.ReadAllText(Model.File))
+        <input type="hidden" id="key" value="@Model.FileKey" />
     }
     catch (Exception ex)
     {
@@ -32,38 +33,46 @@
 
 @if (isValidArticle)
 {
-    @if (!Model.UserComments.Any())
+    @*@if (!Model.UserComments.Any())
     {
-        <div class="media mb-4">
-            <span class="NoComment">No commnet yet. Shoud you want to be first to comment on this article.</span>
-        </div>
-    }
-
+      
+    }*@
+    <div class="media mb-4" id="noCommnet" style="display:none;">
+        <span class="NoComment">No commnet yet. Do you want to be first to comment on this article !!</span>
+    </div>
     <div class="card my-4">
         <h5 class="card-header">Leave a Comment:</h5>
-        <div class="card-body">
-            <form>
+        <form>
+            <div class="card-body">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea id="txtDescription" required class="form-control" rows="3"></textarea>
+                    <p class="help-block"></p>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </form>
-        </div>
+                <button id="btnSubmit" class="btn btn-primary" type="button">Submit</button>
+            </div>
+        </form>
     </div>
 
+    <div id="divComment">
+
+    </div>
+    <div style="display:none" id="commentTemplate">
+        <div class="media mb-4">
+            <img class="d-flex mr-3 rounded-circle" alt="" src="http://placehold.it/50x50">
+            <div class="media-body">
+                <h5 class="mt-0"></h5>
+                
+            </div>
+        </div>
+    </div>
     @* Commnet listing *@
     @if (Model.UserComments.Any())
     {
 
-        @foreach (var comment in Model.UserComments)
-        {
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" alt="" src="http://placehold.it/50x50">
-                <div class="media-body">
-                    <h5 class="mt-0">@comment.UserName</h5>
-                    @comment.Comment
-                </div>
-            </div>
-        }
+        @*@foreach (var comment in Model.UserComments)
+            {
+              
+            }*@
+
     }
 }

@@ -61,7 +61,7 @@ namespace ThinkToCode.Business.Implementations
 
         public bool SaveUserComment(UserComment userCommnet)
         {
-            throw new NotImplementedException();
+            return this.articleRepository.SaveUserComment(userCommnet);
         }
     }
 }
