@@ -325,7 +325,9 @@ header.masthead {
     .portfolio-modal .modal-content {
         padding: 100px 0;
         text-align: right;
-        padding-top:100px;
+        padding-top: 100px;
+        color: greenyellow;
+        background-color: #56515b;
     }
 
         .portfolio-modal .modal-content h2 {
@@ -841,13 +843,19 @@ p {
     top: 10%;
     margin-top: -64px;
     left: 1.5rem;
-
     width: 128px;
     height: 128px;
 }
 
-.TopSpace100{
-    padding-top:100px;
+.TopSpace100 {
+    padding-top: 100px;
+    text-align: justify;
+    color: inherit;
+}
+
+.about {
+    font-size: 20px;
+    color: inherit;
 }
 
 comment.masthead {
@@ -864,36 +872,35 @@ comment.masthead {
 }
 
 .NoComment {
-  font-family:  "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-  font-size:30px;
-  color: violet;
-}
-.content-page{
-    padding-bottom:50px;
-    border-bottom:2px;
-    border-bottom-color:red;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-size: 30px;
+    color: violet;
 }
 
- 
-.fill-height{
-   padding-top: 150px;
-   padding-bottom: 150px;
+.content-page {
+    padding-bottom: 50px;
+    border-bottom: 2px;
+    border-bottom-color: red;
+}
+
+
+.fill-height {
+    padding-top: 150px;
+    padding-bottom: 150px;
     min-height: 100%;
-   height:100vh;
- }
+    height: 100vh;
+}
 
-#hello{
-  vertical-align: middle;
-  font-family: 'Georgia';
-  color: rgb(255, 255, 255); /*white text*/
-  font-weight: bold
+#hello {
+    vertical-align: middle;
+    font-family: 'Georgia';
+    color: rgb(255, 255, 255); /*white text*/
+    font-weight: bold;
 }
 
 
-.has-error{
-    border-color:red;
-    border-width:thick;
-    border-style:double;
+.has-error {
+    border-color: red;
+    border-width: thick;
+    border-style: double;
 }
-
-input foc
